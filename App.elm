@@ -4,7 +4,7 @@ import Html exposing (Html)
 import State
 import View
 import Types
-import Html exposing (Html)
+
 
 
 main : Program Never Types.Model Types.Msg

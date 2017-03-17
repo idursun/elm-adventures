@@ -2,12 +2,14 @@ module State exposing (init, update)
 
 import Types exposing (..)
 import Login.State
+import Material
 
 
 init : Model
 init =
     { count = 0
     , login = Login.State.init
+    , mdl = Material.model
     }
 
 
@@ -28,4 +30,6 @@ update msg model =
                 ( m, cmd ) =
                     Login.State.update msg_ model.login
             in
-                ( { model | login = m }, Cmd.none)
+                ( { model | login = m }, Cmd.none )
+        Mdl msg_ -> Material.update Mdl msg_ model
+
